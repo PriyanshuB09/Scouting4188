@@ -26,8 +26,7 @@ const db = firebase.firestore();
 db.collection("users").add({
     first: "Priyanshu",
     last: "Biswal",
-    born: 2009,
-    id: 'priyanshubiswal-0r42'
+    born: 2009
 })
 .then((docRef) => {
     console.log("Document written with ID: ", docRef.id);
