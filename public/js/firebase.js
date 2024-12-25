@@ -42,124 +42,97 @@ db.collection("users").get().then((querySnapshot) => {
     });
 });
 
-function addRequest() {
-    return new CachedRequest()
-}
+// class CachedResponse {
+//     constructor() {
+//         this.collection = null;
+//         this.data = null;
+//     }
 
-function addResponse() {
-    return new CachedRequest()
-}
+//     open(collectionName) {
+//         this.collection = collectionName;
+//         return this;
+//     }
 
-class CachedRequest {
-    constructor() {
-        this.collection = null;
-        this.data = null;
-    }
+//     add(dataObject) {
+//         this.data = dataObject;
+//         return this;
+//     }
 
-    submit() {
-        if (this.collection !== null && this.data !== null) {
-            return db.collection(this.collection).add(this.data);
-        } else {
-            console.log("Unable to request to push data into database: Missing either collection or data");
-        }
-    }
+//     async submit() {
+//         if (this.collection !== null && this.data !== null) {
+//             return await db.collection(this.collection).add(this.data);
+//         } else {
+//             console.log("Unable to send a response to database: Missing either collection or data");
+//         }
+//     }
 
-    open(collectionName) {
-        let newRequest = new CachedRequest();
-        newRequest.collection = collectionName;
-        newRequest.data = this.data;
-        return newRequest;
-    }
+//     addFilters(...filterList) { // Little bit different addFilters({attribute: "", condition})
 
-    add(dataObject) {
-        let newRequest = new CachedRequest();
-        newRequest.collection = this.collection;
-        newRequest.data = dataObject;
-        return newRequest;
-    }
-}
+//     }
+// }
 
-class CachedResponse {
-    constructor() {
-        this.collection = null;
-        this.data = null;
-        this.attributes = [];
-        this.filters = [];
-    }
+// class CachedRequest {
+//     constructor() {
+//         this.collection = null;
+//         this.filters = [];
+//         this.attributes = []; 
+//     }
 
-    open(collectionName) {
-        let newResponse = new CachedResponse();
-        newResponse.collection = collectionName;
-        newResponse.data = this.data;
-        newResponse.attributes = this.attributes;
-        newResponse.filters = this.filters;
-    }
+//     open(collectionName) {
+//         this.collection = collectionName;
+//         return this;
+//     }
 
-    withdraw() {
-        if (this.collection !== null) {
-            db.collection(this.collection).get().then((querySnapshot) => {
-                let newResponse = new CachedResponse();
-                newResponse.data = querySnapshot;
-                newResponse.collection = this.collection;
-                newResponse.attributes = this.attributes;
-                newResponse.filters = this.filters;
-                return newResponse;
-            });
-        } else {
-            console.log('Unable to send a response from the database: Missing collection');
-        }
-    }
+//     returnAttributes(...attributeList) {
+//         this.attributes = this.attributes.concat(attributeList);
+//         return this;
+//     }
 
-    return() {
-        let array = [];
+//     addFilters(...filterList) {
+//         this.filters = this.filters.concat(filterList);
+//         return this;
+//     }
 
-        if (this.collection !== null && this.data !== null) {
-            for (let filter of this.filters) {
-                let filteredData = [];
-                this.data.forEach(doc => {
-                    if (filter.condition(doc.data()[filter.attribute])) {
-                        filterData.push(doc);
-                    }
-                });
+//     async withdraw() {
+//         let data;
+//         if (this.collection !== null) {
+//             data = await new Promise((resolve, reject) => {
+//                 db.collection(this.collection).get().then(querySnapshot => {
+//                     let currentData = [];
+//                     querySnapshot.forEach(doc => currentData.push(doc.data()));
 
-                this.data = filteredData;
-            }
+//                     if (this.filters.length > 0) {
+//                         this.filters.forEach(filter => {
+//                             let filteredData = [];
+//                             currentData.forEach(doc => {
+//                                 if (filter.condition(doc[filter.attribute])) filteredData.push(doc);
+//                             });
+//                             currentData = filteredData;
+//                         });
+//                     }
 
-            this.data.forEach(doc => {
-                let dataForDoc = {};
-                if (this.attributes.length > 0) {
-                    for (let attribute of this.attributes) {
-                        dataForDoc[attribute] = doc.data()[attribute];
-                    }
-                } else {
-                    dataForDoc = doc.data();
-                }   
+//                     if (this.attributes.length > 0) {
+//                         let returnableData = [];
+//                         currentData.forEach(doc => {
+//                             let revisedDoc = {};
+//                             this.attributes.forEach(attr => {
+//                                 revisedDoc[attr] = doc[attr];
+//                             });
+//                             returnableData.push(revisedDoc);
+//                         });
+//                         currentData = returnableData;
+//                     }
 
-                array.push(dataForDoc);
-            });
-        }
+//                     resolve(currentData);
+//                 });
+//             });
 
-        
-
-        return array;
-    }
-
-    addFilters([...filterList]) {
-        let newResponse = new CachedResponse();
-        newResponse.attributes = this.attributes;
-        newResponse.collection = this.collection;
-        newResponse.data = this.data;
-        newResponse.filters = this.filters.concat(filterList);
-    }
-
-    addReturnableAttributes([...attributeList]) {
-        let newResponse = new CachedResponse();
-        newResponse.attributes = this.attributes.concat(attributeList);
-        newResponse.collection = this.collection;
-        newResponse.data = this.data;
-        newResponse.filters = this.filters;
-    }
-}
+//             return data;
+//         } else {
+//             console.log("Unable to request data from the database: Missing collection");
+//         }
+//     }
+// }
 
 /*
 
@@ -169,28 +142,6 @@ addRequest().open(collection).add(data).submit().then(callback).catch(callback);
 
 Architecture of CachedResponse
 
-addResponse().open(collection).withdraw().return(attributes);
-
-OR
-
-addResponse().open(collection).withdraw().config(attributes).config(attributes).return();
-
-
-OR
-
-addResponse().open("scouters").withdraw().addReturnableAttributes("name", "permission").addFilters({attribute: "name", condition: attr => return (attr == "Priyanshu Biswal")}).return();
+addResponse().open(collection).returnAttributes("name").addFilters({attribute: attr, condition: conditional}).withdraw().then();
 
 */
-
-
-
-
-let accountDetails = addResponse()
-                        .open("scouters")
-                        .withdraw()
-                        .addReturnableAttributes("name", "permission")
-                        .addFilters({
-                            attribute: "name",
-                            condition: attr => attr == "Priyanshu Biswal"
-                        })
-                        .return();
