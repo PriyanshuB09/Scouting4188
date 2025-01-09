@@ -106,7 +106,6 @@ New Theme Colors:
     }
 
     .nav-top {
-        display: fixed;
         font-family: "Montserrat", serif;
         font-size: 20px;
         background-color: #505050;
@@ -155,5 +154,31 @@ New Theme Colors:
         border-radius: 25px;
         width: 100%;
         height: 50px;
+    }
+
+    #task-bar {
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 2em;
+        color: white;
+        background-color: rgb(61, 61, 61);
+    }
+
+    #task-bar-list {
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        align-content: space-evenly;
+        padding: 5px;
+    }
+
+    #task-bar-list div {
+        height: 2em;
+        font-size: 20px;
     }
 }

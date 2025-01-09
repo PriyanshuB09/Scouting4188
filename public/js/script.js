@@ -1,12 +1,21 @@
 let userDetail;
 
-function addRequest() {
-    return new CachedRequest();
+/**
+ * Starting method to initialize a new CachedEmitter.
+ * @returns A Cached Emitter for writing, updating, and deleting queries.
+ */
+function addEmitter() {
+    return new CachedEmitter();
+}
+/**
+ * Starting method to initialize a new CachedListener.
+ * @returns A Cached Listener for reading and filtering queries.
+ */
+function addListener() {
+    return new CachedListener();
 }
 
-function addResponse() {
-    return new CachedResponse();
-}
+
 
 $(() => {
     if (userDetail) {
@@ -18,24 +27,23 @@ $(() => {
     }
 
     $('#signin-btn').click(() => {
-        
-        addRequest().open('scouters').returnAttributes('name').withdraw().then(usernameArrayInObject => {
+        addListener().open('scouters').return('name').then(usernameArrayInObject => {
             console.log(usernameArrayInObject);
             let usernameArray = [];
             for (let acc of usernameArrayInObject) usernameArray.push(acc.name);
             console.log(usernameArray);
             if (usernameArray.includes($('#signin-input').val())) {
-                addRequest().open('scouters').returnAttributes('name', 'permission').addFilters({attribute: "name", condition: attr => attr == $('signin-input').val()}).withdraw().then(detail => {
+                addListener().open('scouters').find("name", '==', $('#signin-input').val()).return().then(detail => {
                     userDetail = detail[0];
                     $('#signin').hide();
                     console.log('found existing account, registered under it');
                 });
             } else {
-                addResponse().open('scouters').add({
+                addEmitter().open('scouters').applyTo(`scouter${usernameArray.length + 1}`).add({
                     name: $('#signin-input').val(), 
                     permission: "scout",
                     assignments: []
-                }).submit().then(() => {
+                }).commit().then(() => {
                     userDetail = {
                         name: $('#signin-input').val(), 
                         permission: "scout",
@@ -51,7 +59,10 @@ $(() => {
 });
 
 async function updateHomePage() {
-    addRequest.open("notifications")
+    addListener.open('notifications').return 
+
+    let allHTML = ``;
+    
 
     $('#notifications').html(`
         <div class="welcome-heading">

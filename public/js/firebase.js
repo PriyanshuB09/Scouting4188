@@ -6,22 +6,11 @@
 
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://support.google.com/firebase/answer/7015592
-const firebaseConfig = {
-    apiKey: "AIzaSyDlHbuvs7sPs3Ipaq79bt6VxEswrZ5_FHU",
-    authDomain: "scouting-d7fed.firebaseapp.com",
-    databaseURL: "https://scouting-d7fed-default-rtdb.firebaseio.com",
-    projectId: "scouting-d7fed",
-    storageBucket: "scouting-d7fed.appspot.com",
-    messagingSenderId: "1067372801750",
-    appId: "1:1067372801750:web:0e6b938d4188cba804a377",
-    measurementId: "G-6XTHW03S8D"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+
 
 
 // Initialize Cloud Firestore and get a reference to the service
-const db = firebase.firestore();
+// const db = firebase.firestore();
 
 
 // db.collection("scouters").add({
@@ -36,11 +25,11 @@ const db = firebase.firestore();
 // });
 
 
-db.collection("users").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data()}`);
-    });
-});
+// db.collection("users").get().then((querySnapshot) => {
+//     querySnapshot.forEach((doc) => {
+//         console.log(`${doc.id} => ${doc.data()}`);
+//     });
+// });
 
 // class CachedResponse {
 //     constructor() {
