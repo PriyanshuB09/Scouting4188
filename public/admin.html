@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="nav-bar">
+        <ul>
+          <li id="back-btn" onclick="location.replace('../')"><i class="fa-solid fa-chevron-left"></i></li>
+          <li><span>Admin</span></li>
+        </ul>
+      </div>
+      
+      <div class="tabs-bar">
+        <div id="schedule-tab">Schedule</div>
+        <div id="teams-tab">Teams</div>
+      <!--   <div>Notifs</div>
+        <div>Scouters</div>
+        <div>Matches</div> -->
+      </div>
+      
+      <div id="actions-bar">
+        <div id="bulk-delete">
+          Bulk Delete
+        </div>
+        <div id="bulk-insert">
+          Bulk Insert
+        </div>
+      </div>
+      
+      <div id="delete-confirmation">
+        <span>Deleting All?</span>
+        <div id="delete-yes">Yes</div>
+        <div id="delete-no">No</div>
+      </div>
+      
+      <div id="bulk-insert-popup">
+        <div id="insert-blue-teams">
+          <input id="insert-blue-1" type="text"/>
+          <input id="insert-blue-2" type="text"/>
+          <input id="insert-blue-3" type="text"/>
+        </div>
+        <div id="insert-red-teams">
+          <input id="insert-red-1" type="text"/>
+          <input id="insert-red-2" type="text"/>
+          <input id="insert-red-3" type="text"/>
+        </div>
+        <div id="insert-submit">Insert</div>
+      </div>
+      
+      <div class="section-div" id="schedule-form">
+        <div id="event-name">
+          <span>Event Key: </span>
+          <input list="events" type="text" id="event-name-input"/>
+          <div id="event-name-submit">Enter</div>
+          <datalist id="events">
+          </datalist>
+        </div>
+        
+        <div id="event-schedule">
+          
+          
+        </div>
+      </div>
+      
+      <div class="section-div" id="teams-form">
+        <div id="event-name-teams">
+          <span>Event Key: </span>
+          <input list="events" type="text" id="event-name-teams-input"/>
+        </div>
+      </div>
+        
+      <div id="background-blur"></div>
+      <div id="event-modal" class="modal">
+        <div id="modal-x"><i class="fa-solid fa-square-xmark"></i></div>
+        <div id="modal-data">
+          <div id="modal-qual">
+            <span>Match: </span>
+            <div id="modal-qual-input-down"><i class="fa-solid fa-minus"></i></div>
+            <input id="modal-qual-input" type="number"/>
+            <div id="modal-qual-input-up"><i class="fa-solid fa-plus"></i></div>
+          </div>
+          
+          <div id="modal-alliances">
+            <div id="modal-blue">
+              <input id="modal-blue-1" type="number"/>
+              <input id="modal-blue-2" type="number"/>
+              <input id="modal-blue-3" type="number"/>
+            </div>
+            <div id="modal-red">
+              <input id="modal-red-1" type="number"/>
+              <input id="modal-red-2" type="number"/>
+              <input id="modal-red-3" type="number"/>
+            </div>
+          </div>
+          
+          <div id="modal-submit">Submit & Update</div>
+        </div>
+      </div>
+      
+      
+      <script src="https://kit.fontawesome.com/ac0c160a73.js" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+      <script src="
+      https://cdn.jsdelivr.net/npm/jquery.mousewheel@3.1.9/jquery.mousewheel.min.js
+      "></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore-compat.js"></script>
+  <script src="https://kit.fontawesome.com/ac0c160a73.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+  <script src="
+  https://cdn.jsdelivr.net/npm/jquery.mousewheel@3.1.9/jquery.mousewheel.min.js
+  "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/js/cspdb.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

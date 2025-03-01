@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Sheet</title>
+    <link rel="stylesheet" href="css/data.css">
+</head>
+<body>
+
+    <div class="nav-bar">
+        <ul>
+          <li id="back-btn" onclick="location.replace('../')"><i class="fa-solid fa-chevron-left"></i></li>
+          <li><span style="font-weight: bold;">Data Sheet</span></li>
+        </ul>
+      </div>
+      
+      <div class="tabs-div">
+        <div id="scout">Scout</div>
+        <div id="pit">Pit</div>
+        <!-- <div id="chart">Charts</div> -->
+        <div id="average">Averages</div>
+      </div>
+      
+      
+      <div class="section-div" id="pit-div">
+        <table class="pit-table">
+          <tr>
+            <th>Event</th>
+            <th>Team #</th>
+            <th>Drivetrain</th>
+            <th>Auto Mobility</th>
+            <th>Auto Placing</th>
+            <th>Tele Placing</th>
+            <th>Reef Score</th>
+            <th>Algae Score</th>
+            <th>Climb</th>
+            <th>Notes</th>
+          </tr>
+        </table>
+      </div>
+      
+      <div class="section-div" id="scout-div">
+        <table class="scout-table">
+          <tr>
+            <th>Event</th>
+            <th>Scouter Name</th>
+            <th>Match Number</th>
+            <th>Team Number</th>
+            <th>Alliance Color</th>
+            <th>Alliance Position</th>
+            <th>Starting Position</th>
+            <th>Preload</th>
+            
+            <th>Auto Mobility</th>
+            <th>Auto L1 Made</th>
+            <th>Auto L2 Made</th>
+            <th>Auto L3 Made</th>
+            <th>Auto L4 Made</th>
+            <th>Auto L1 Miss</th>
+            <th>Auto L2 Miss</th>
+            <th>Auto L3 Miss</th>
+            <th>Auto L4 Miss</th>
+            <th>Auto Barge</th>
+            <th>Auto Processor</th>
+            
+            <th>Tele L1 Made</th>
+            <th>Tele L2 Made</th>
+            <th>Tele L3 Made</th>
+            <th>Tele L4 Made</th>
+            <th>Tele L1 Miss</th>
+            <th>Tele L2 Miss</th>
+            <th>Tele L3 Miss</th>
+            <th>Tele L4 Miss</th>
+            <th>Tele Barge</th>
+            <th>Tele Processor</th>
+            <th>Tele Park</th>
+            <th>Time to Climb</th>
+            <th>Notes</th>
+          </tr>
+        </table>
+      </div>
+      
+      <div class="section-div" id="average-div">
+        <table class="pit-table">
+            <tr>
+                <th>Event</th>
+                <th>Team Number</th>
+                <th>Auto L1 Made</th>
+                <th>Auto L2 Made</th>
+                <th>Auto L3 Made</th>
+                <th>Auto L4 Made</th>
+                <th>Auto L1 Miss</th>
+                <th>Auto L2 Miss</th>
+                <th>Auto L3 Miss</th>
+                <th>Auto L4 Miss</th>
+                <th>Auto Barge</th>
+                <th>Auto Processor</th>
+                
+                <th>Tele L1 Made</th>
+                <th>Tele L2 Made</th>
+                <th>Tele L3 Made</th>
+                <th>Tele L4 Made</th>
+                <th>Tele L1 Miss</th>
+                <th>Tele L2 Miss</th>
+                <th>Tele L3 Miss</th>
+                <th>Tele L4 Miss</th>
+                <th>Tele Barge</th>
+                <th>Tele Processor</th>
+                <th>Time to Climb</th>
+              </tr>
+        </table>
+      </div>
+      
+      <div class="section-div" id="chart-div"></div>
+
+    
+    <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore-compat.js"></script>
+  <script src="https://kit.fontawesome.com/ac0c160a73.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+  <script src="
+  https://cdn.jsdelivr.net/npm/jquery.mousewheel@3.1.9/jquery.mousewheel.min.js
+  "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/js/cspdb.js"></script>
+  <script src="/js/data.js"></script>
+</body>
+</html>

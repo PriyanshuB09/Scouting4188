@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Scouting Form</title>
+    <link rel="stylesheet" href="css/scout.css">
+</head>
+<body>
+    <!-- Idk i think i call this the navigation div T-T -->
+<div class="nav-bar">
+  <ul>
+    <li id="back-btn"><i class="fa-solid fa-chevron-left"></i></li>
+    <li><span style="font-weight: bold;">Scouting Form</span></li>
+  </ul>
+</div>
+<div id="background-blur"></div>
+<div id="info-modal" class="modal"></div>
+
+<div class="tabs-div">
+  <div id="setup">Setup</div>
+  <div id="auto">Auto</div>
+  <div id="tele">Tele</div>
+  <div id="notes">Notes</div>
+</div>
+
+<div class="traversal">
+  <div id="back-section">
+    Back
+  </div>
+  <div id="next-section">
+    Next
+  </div>
+  <div id="submit-form">
+    Submit
+  </div>
+</div>
+<div id="setup-div" class="section-div">
+  <div id="scouter-name">
+    <span>Scouter Name: </span>
+    <input id="scouter-name-input" placeholder="Name"/>
+  </div>
+  <div id="alliance">
+    <div id="starting-position-div">
+      <div id="far">Far</div>
+      <div id="mid">Mid</div>
+      <div id="near">Near</div>
+    </div>
+    <div id="other-alliance">
+      <div id="match-number-div">
+        <span>Match: </span>
+        <input type="number" id="match-number" />
+      </div>
+      <div id="alliance-color">
+        <div id="color-red">Red</div>
+        <div id="color-blue">Blue</div>
+      </div>
+      
+      <div id="alliance-position">
+        <div id="position-1">1</div>
+        <div id="position-2">2</div>
+        <div id="position-3">3</div>
+      </div>
+      
+      <div id="team-number-div">
+        <span>Team: </span>
+        <input type="number" placeholder="####" id="team-number-input"/>
+      </div>
+      
+      <div id="preload-div">
+        <span>Preload: </span>
+        <div id="preload-yes">Yes</div>
+        <div id="preload-no">No</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="auto-div" class="section-div">
+  <div id="auto-mobility">
+    <span>Mobility: </span>
+    <div id="auto-mobility-yes">Yes</div>
+    <div id="auto-mobility-no">No</div>
+  </div>
+  
+  <div id="auto-reef">
+    <div id="l1-reef" class="reef">
+      <div>
+        <div>L1</div>
+        <div>Miss</div>
+      </div>
+      <div id="l1-reef-row-container" class="row-container">
+        <div id="l1-reef-made" class="reef-made"> 
+          <div id="l1-reef-number" class="reef-number">0</div>
+          <div id="l1-reef-number-up" class="number-up">+</div>
+          <div id="l1-reef-number-down" class="number-up">-</div>
+        </div>
+        <div id="l1-reef-miss" class="reef-miss">
+          <div id="l1-miss-reef-number" class="miss-reef-number">0</div>
+          <div id="l1-miss-reef-number-up" class="miss-number-up">+</div>
+          <div id="l1-miss-reef-number-down" class="miss-number-up">-</div>
+        </div>
+      </div>
+    </div>
+    <div id="l2-reef" class="reef">
+      <div>
+        <div>L2</div>
+        <div>Miss</div>
+      </div>
+      <div id="l2-reef-row-container" class="row-container">
+        <div id="l2-reef-made" class="reef-made"> 
+          <div id="l2-reef-number" class="reef-number">0</div>
+          <div id="l2-reef-number-up" class="number-up">+</div>
+          <div id="l2-reef-number-down" class="number-up">-</div>
+        </div>
+        <div id="l2-reef-miss" class="reef-miss">
+          <div id="l2-miss-reef-number" class="miss-reef-number">0</div>
+          <div id="l2-miss-reef-number-up" class="miss-number-up">+</div>
+          <div id="l2-miss-reef-number-down" class="miss-number-up">-</div>
+        </div>
+      </div>
+    </div>
+    <div id="l3-reef" class="reef">
+      <div>
+        <div>L3</div>
+        <div>Miss</div>
+      </div>
+      <div id="l3-reef-row-container" class="row-container">
+        <div id="l3-reef-made" class="reef-made"> 
+          <div id="l3-reef-number" class="reef-number">0</div>
+          <div id="l3-reef-number-up" class="number-up">+</div>
+          <div id="l3-reef-number-down" class="number-up">-</div>
+        </div>
+        <div id="l3-reef-miss" class="reef-miss">
+          <div id="l3-miss-reef-number" class="miss-reef-number">0</div>
+          <div id="l3-miss-reef-number-up" class="miss-number-up">+</div>
+          <div id="l3-miss-reef-number-down" class="miss-number-up">-</div>
+        </div>
+      </div>
+    </div><div id="l4-reef" class="reef">
+      <div>
+        <div>L4</div>
+        <div>Miss</div>
+      </div>
+      <div id="l4-reef-row-container" class="row-container">
+        <div id="l4-reef-made" class="reef-made"> 
+          <div id="l4-reef-number" class="reef-number">0</div>
+          <div id="l4-reef-number-up" class="number-up">+</div>
+          <div id="l4-reef-number-down" class="number-up">-</div>
+        </div>
+        <div id="l4-reef-miss" class="reef-miss">
+          <div id="l4-miss-reef-number" class="miss-reef-number">0</div>
+          <div id="l4-miss-reef-number-up" class="miss-number-up">+</div>
+          <div id="l4-miss-reef-number-down" class="miss-number-up">-</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="auto-other" class="other-stuff">
+    <div id="auto-processor" class="processor">
+      <span>Processor: </span>
+      <div class="processor-group">
+        <div id="auto-processor-number" class="processor-number">0</div>
+        <div id="auto-processor-number-up" class="processor-number-up">+</div>
+        <div id="auto-processor-number-down" class="processor-number-down">-</div>
+      </div>
+    </div>
+
+    <div id="auto-barge" class="barge">
+      <span>Barge: </span>
+      <div class="barge-group">
+        <div id="auto-barge-number" class="barge-number">0</div>
+        <div id="auto-barge-number-up" class="barge-number-up">+</div>
+        <div id="auto-barge-number-down" class="barge-number-down">-</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="tele-div" class="section-div">
+  <div id="tele-reef">
+    <div id="t-l1-reef" class="reef">
+      <div>
+        <div>L1</div>
+        <div>Miss</div>
+      </div>
+      <div id="t-l1-reef-row-container" class="row-container">
+        <div id="t-l1-reef-made" class="reef-made"> 
+          <div id="t-l1-reef-number" class="reef-number">0</div>
+          <div id="t-l1-reef-number-up" class="number-up">+</div>
+          <div id="t-l1-reef-number-down" class="number-up">-</div>
+        </div>
+        <div id="t-l1-reef-miss" class="reef-miss">
+          <div id="t-l1-miss-reef-number" class="miss-reef-number">0</div>
+          <div id="t-l1-miss-reef-number-up" class="miss-number-up">+</div>
+          <div id="t-l1-miss-reef-number-down" class="miss-number-up">-</div>
+        </div>
+      </div>
+    </div>
+    <div id="t-l2-reef" class="reef">
+      <div>
+        <div>L2</div>
+        <div>Miss</div>
+      </div>
+      <div id="t-l2-reef-row-container" class="row-container">
+        <div id="t-l2-reef-made" class="reef-made"> 
+          <div id="t-l2-reef-number" class="reef-number">0</div>
+          <div id="t-l2-reef-number-up" class="number-up">+</div>
+          <div id="t-l2-reef-number-down" class="number-up">-</div>
+        </div>
+        <div id="t-l2-reef-miss" class="reef-miss">
+          <div id="t-l2-miss-reef-number" class="miss-reef-number">0</div>
+          <div id="t-l2-miss-reef-number-up" class="miss-number-up">+</div>
+          <div id="t-l2-miss-reef-number-down" class="miss-number-up">-</div>
+        </div>
+      </div>
+    </div>
+    <div id="t-l3-reef" class="reef">
+      <div>
+        <div>L3</div>
+        <div>Miss</div>
+      </div>
+      <div id="t-l3-reef-row-container" class="row-container">
+        <div id="t-l3-reef-made" class="reef-made"> 
+          <div id="t-l3-reef-number" class="reef-number">0</div>
+          <div id="t-l3-reef-number-up" class="number-up">+</div>
+          <div id="t-l3-reef-number-down" class="number-up">-</div>
+        </div>
+        <div id="t-l3-reef-miss" class="reef-miss">
+          <div id="t-l3-miss-reef-number" class="miss-reef-number">0</div>
+          <div id="t-l3-miss-reef-number-up" class="miss-number-up">+</div>
+          <div id="t-l3-miss-reef-number-down" class="miss-number-up">-</div>
+        </div>
+      </div>
+    </div>
+    <div id="t-l4-reef" class="reef">
+      <div>
+        <div>L4</div>
+        <div>Miss</div>
+      </div>
+      <div id="t-l4-reef-row-container" class="row-container">
+        <div id="t-l4-reef-made" class="reef-made"> 
+          <div id="t-l4-reef-number" class="reef-number">0</div>
+          <div id="t-l4-reef-number-up" class="number-up">+</div>
+          <div id="t-l4-reef-number-down" class="number-up">-</div>
+        </div>
+        <div id="t-l4-reef-miss" class="reef-miss">
+          <div id="t-l4-miss-reef-number" class="miss-reef-number">0</div>
+          <div id="t-l4-miss-reef-number-up" class="miss-number-up">+</div>
+          <div id="t-l4-miss-reef-number-down" class="miss-number-up">-</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="tele-other" class="other-stuff">
+    <div id="tele-processor" class="processor">
+      <span>Processor: </span>
+      <div class="processor-group">
+        <div id="tele-processor-number" class="processor-number">0</div>
+        <div id="tele-processor-number-up" class="processor-number-up">+</div>
+        <div id="tele-processor-number-down" class="processor-number-down">-</div>
+      </div>
+    </div>
+
+    <div id="tele-barge" class="barge">
+      <span>Barge: </span>
+      <div class="barge-group">
+        <div id="tele-barge-number" class="barge-number">0</div>
+        <div id="tele-barge-number-up" class="barge-number-up">+</div>
+        <div id="tele-barge-number-down" class="barge-number-down">-</div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="tele-park">
+    <div id="other-park">
+      <span style="width: 5em;">Park: </span>
+      <div id="tele-park-none">None</div>
+      <div id="tele-park-ground">Ground</div>
+      <div id="tele-park-climb">Climb</div>
+    </div>
+    <div id="climb-timer">
+      <div id="time-seconds">0.0</div>
+      <div id="start-timer">Start</div>
+      <div id="pause-timer">Pause</div>
+      <div id="end-timer">End</div>
+      <div id="reset-timer">Reset</div>
+    </div>
+  </div>
+</div>
+<div id="notes-div" class="section-div">
+  <div id="extra-notes">
+    <textarea id="extra-notes-textarea" placeholder="Comments here..."></textarea>
+  </div>
+</div>
+  
+  
+  <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore-compat.js"></script>
+  <script src="https://kit.fontawesome.com/ac0c160a73.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+  <script src="
+  https://cdn.jsdelivr.net/npm/jquery.mousewheel@3.1.9/jquery.mousewheel.min.js
+  "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/js/cspdb.js"></script>
+  <script src="/js/scout.js"></script>
+</body>
+</html>

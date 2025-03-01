@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css?v1.0.1">
+    <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="manifest" href="manifest.json" />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-status-bar" content="#4CBB17" />
@@ -13,43 +13,32 @@
 </head>
 <body>
 
-    <div id="task-bar">
-        <div id="task-bar-list">
-            <div id="tab-open"><i class="fa-solid fa-bars"></i></div>
-            <div id="settings-open"><i class="fa-solid fa-gear"></i></div>
-        </div>
+    <!-- Idk i think i call this the navigation div T-T -->
+<div class="nav-bar">
+    <ul>
+      <li><span style="font-weight: bold;">Homepage</span></li>
+    </ul>
+  </div>
+  <div class="section-div">
+    <div class="page">
+      <span>Scouting</span>
+      <div onclick="location.replace('/scout')">GO</div>
     </div>
-
-    <div id="homepage" class="page">
-        <div class="nav-top">
-            <div class="nav-list">
-                <div id="scout-link">Scout</div>
-                <div id="admin-link">Admin</div>
-                <div id="chart-link">Chart</div>
-            </div>
-        </div>
-
-        <div class="container" id="signin">
-            <div id="signin-form">
-                <div class="input-container">
-                    <input class="effect-1" type="text" placeholder="Full Name" id="signin-input"/>
-                    <button id="signin-btn">Sign In</button>
-                    <span class="focus-border"></span>
-                </div>
-            </div>
-        </div>
-        <div class="container" id="welcome">
-            <div id="notifications">
-
-            </div>
-            <div id="assignments">
-
-            </div>
-            <div id="schedules">
-
-            </div>
-        </div>
+    
+    <div class="page">
+      <span>Pit Scouting</span>
+      <div onclick="location.replace('/pit')">GO</div>
     </div>
+    
+    <div class="page">
+      <span>Datapage</span>
+      <div onclick="location.replace('/data')">GO</div>
+    </div>
+  <div>
+    
+    
+  
+
 
 
     <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-app-compat.js"></script>
@@ -57,7 +46,6 @@
     <script src="https://kit.fontawesome.com/ac0c160a73.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script src="js/cspdb.js"></script>
-    <script src="js/firebase.js?v=1.0.1"></script>
-    <script src="js/script.js?v=1.0.1"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

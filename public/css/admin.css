@@ -1,0 +1,602 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+html, body {
+  height: 100%;
+  
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.nav-bar {
+  background-color: red;
+  width: 100%;
+  height: 2.5em;
+  border-radius: 0px 0px 0px 0px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+.nav-bar ul {
+  text-decoration: none;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+}
+
+.nav-bar ul li {
+  background-color: grey;
+  height: 2em;
+  min-width: 50px;
+  font-size: 1.25em;
+  align-content: center;
+  text-align: center;
+  padding-right: 5px;
+  padding-left: 5px;
+  transition-duration: 0.4s;
+}
+
+.nav-bar ul li:active {
+  background-color: pink;
+}
+
+.tabs-bar {
+  position: fixed;
+  top: 2.5em;
+  right: 0;
+  background-color: #00FF00;
+  display: none;
+  width: 30%;
+  height: 7.5em;
+  flex-direction: column;
+  flex-wrap: no-wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  z-index: 999;
+}
+
+.tabs-bar div {
+  align-content: center;
+  text-align: center;
+  min-width: 90%;
+  height: 5px;
+  height: 3em;
+  background-color: grey;
+}
+
+.section-div {
+  position: absolute;
+  top: 2.5em;
+  left: 0px;
+  height: calc(100vh - 2.5em);
+  background-color: lightgrey;
+  padding: 5px;
+  box-sizing: border-box;
+  transition-duration: 0.4s;
+  width: 100%;
+}
+
+#schedule-form {
+  display: block;
+  opacity: 1;
+  width: 100%;
+}
+
+#event-name {
+  display: flex;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: orange;
+  height: 2.75em;
+  box-sizing: border-box;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#event-name span {
+  align-content: center;
+  text-align: center;
+}
+
+#event-name-input {
+  width: 20%;
+  margin-left: 10px;
+  border: none;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: lightblue;
+  font-family: "Outfit";
+  font-size: 14px;
+  height: 2.5em;
+  align-content: center;
+/*   text-align: center; */
+}
+
+#event-name-submit {
+    background-color: white;
+    width: 20%;
+    height: 2.5em;
+    padding: 5px;
+    box-sizing: border-box;
+    align-content: center;
+    text-align: center;
+}
+
+#event-schedule {
+  display: flex;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: orange;
+  min-height: 0em;
+  box-sizing: border-box;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.match-row:not(:last-child) {
+  width: 100%;
+  height: 3em;
+  overflow-x: auto;
+  background-color: grey;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 5px;
+}
+
+.match-row:last-child {
+  width: 100%;
+  height: 3em;
+  overflow-x: auto;
+  background-color: grey;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.match-row > span {
+  align-content: center;
+  text-align: center;
+  width: 15%;
+  background-color: lightgreen;
+  
+}
+
+.blue-teams {
+  align-content: center;
+  width: 42.5%;
+  background-color: blue;
+  color: white;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+  display: flex;
+}
+
+.red-teams {
+  display: flex;
+  align-content: center;
+  width: 42.5%;
+  background-color: red;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+}
+
+.blue-team-display {
+  box-sizing: border-box;
+  padding-right: 5px;
+  padding-left: 5px;
+  align-content: center;
+  text-align: center;
+}
+
+.team {
+  box-sizing: border-box;
+  /* padding-right: auto;
+  padding-left: auto; */
+  align-content: center;
+  text-align: center;
+  width: 33%;
+}
+
+.blue-teams > .team {
+  background-color: blue;
+}
+
+.red-teams > .red {
+  background-color: red;
+}
+
+#actions-bar {
+  width: 100%;
+  background-color: blue;
+  height: 3em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 5px;
+  box-sizing: border-box;
+  align-items: center;
+  z-index: 999;
+}
+
+#bulk-delete {
+  width: 6em;
+  background-color: grey;
+  padding: 5px;
+  height: 2.5em;
+  box-sizing: border-box;
+  align-content: center;
+  text-align: center;
+}
+
+#bulk-insert {
+  width: 6em;
+  background-color: grey;
+  padding: 5px;
+  height: 2.5em;
+  box-sizing: border-box;
+  align-content: center;
+  text-align: center;
+}
+
+#delete-confirmation {
+  width: 50%;
+  background-color: lightgreen;
+  height: 4em;
+  position: fixed;
+  bottom: 3em;
+  left: 25%;
+  display: none;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 5px;
+  box-sizing: border-box;
+  align-items: center;
+  z-index: 999;
+}
+
+#delete-confirmation div {
+  background-color: grey;
+  color: white;
+  padding: 5px;
+}
+
+#bulk-insert-popup {
+  width: 100%;
+  background-color: lightgreen;
+  height: 9em;
+  position: fixed;
+  bottom: 3em;
+  left: 0;
+  display: none;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 5px;
+  box-sizing: border-box;
+  align-items: center;
+  z-index: 999;
+  overflow: auto;
+}
+
+#insert-blue-teams {
+  display: flex;
+  width: 45%;
+  height: 100%;
+  background-color: grey;
+  color: white;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#insert-red-teams {
+  display: flex;
+  width: 45%;
+  height: 100%;
+  background-color: grey;
+  color: white;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#insert-blue-1, #insert-blue-2, #insert-blue-3 {
+  width: 90%;
+  border: none;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: lightblue;
+  font-family: "Outfit";
+  font-size: 14px;
+  height: 2.5em;
+  align-content: center;
+/*   text-align: center; */
+}
+
+#insert-red-1, #insert-red-2, #insert-red-3 {
+  width: 90%;
+  border: none;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: pink;
+  font-family: "Outfit";
+  font-size: 14px;
+  height: 2.5em;
+  align-content: center;
+/*   text-align: center; */
+}
+
+#insert-submit {
+  display: flex;
+  width: 45%;
+  height: 80%;
+  background-color: grey;
+  color: white;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  width: 80%;
+  height: 60%;
+  background-color: cyan;
+  left: 10%;
+  top: 10%;
+  z-index: 999;
+  overflow-y: auto;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#background-blur {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+}
+
+#modal-x {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  box-sizing: border-box;
+  width: 1.75em;
+  height: 1.75em;
+  font-size: 1.75em;
+  align-content: center;
+  text-align: center;
+}
+
+#modal-data {
+  display: flex;
+  width: 90%;
+  height: 80%;
+  background-color: grey;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+#modal-qual {
+  display: flex;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: orange;
+  height: 2.75em;
+  box-sizing: border-box;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#modal-qual span {
+  width: 40%;
+  align-content: center;
+  text-align: center;
+}
+
+#modal-qual-input-up {
+  background-color: lightgrey;
+  width: 20%;
+  align-content: center;
+  text-align: center;
+  font-size: 30px;
+  height: calc(2.75 * 16px);
+  line-height: 16px;
+}
+
+#modal-qual-input-down {
+  background-color: lightgrey;
+  height: calc(2.75 * 16px);
+  width: 20%;
+  align-content: center;
+  text-align: center;
+  font-size: 30px;
+  line-height: 16px;
+}
+
+#modal-qual-input {
+  width: 20%;
+  border: none;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: lightblue;
+  font-family: "Outfit";
+  font-size: 14px;
+  height: 100%;
+  align-content: center;
+  text-align: center;
+}
+
+#modal-alliances {
+  display: flex;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: orange;
+  min-height: 2.75em;
+  box-sizing: border-box;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#modal-blue {
+  background-color: lightgrey;
+  display: flex;
+  height: 6.75em;
+  flex-wrap: no-wrap;
+  flex-direction: column;
+  padding: 5px;
+  box-sizing: border-box;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal-red {
+  background-color: lightgrey;
+  display: flex;
+  height: 6.75em;
+  flex-wrap: no-wrap;
+  flex-direction: column;
+  padding: 5px;
+  box-sizing: border-box;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal-blue-1, #modal-blue-2, #modal-blue-3 {
+  width: 90%;
+  border: none;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: lightblue;
+  font-family: "Outfit";
+  font-size: 14px;
+  height: 2.5em;
+  align-content: center;
+/*   text-align: center; */
+}
+
+#modal-red-1, #modal-red-2, #modal-red-3 {
+  width: 90%;
+  border: none;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: pink;
+  font-family: "Outfit";
+  font-size: 14px;
+  height: 2.5em;
+  align-content: center;
+/*   text-align: center; */
+}
+
+#modal-submit {
+  display: flex;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: orange;
+  height: 2.75em;
+  box-sizing: border-box;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#event-name-teams {
+  display: flex;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: orange;
+  height: 2.75em;
+  box-sizing: border-box;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#event-name-teams span {
+  align-content: center;
+  text-align: center;
+}
+
+#event-name-teams-input {
+  width: 40%;
+  margin-left: 10px;
+  border: none;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: lightblue;
+  font-family: "Outfit";
+  font-size: 14px;
+  height: 2.5em;
+  align-content: center;
+/*   text-align: center; */
+}
+
+#teams-form {
+  display: block;
+  opacity: 0;
+  width: 0%;
+}

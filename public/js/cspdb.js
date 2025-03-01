@@ -23,6 +23,10 @@ const ASCENDING = "asc";
  */
 const DESCENDING = "desc";
 
+$('#back-btn').click(function() {
+    location.replace('../');
+});
+
 
 /**
  * 
@@ -120,10 +124,14 @@ class CachedEmitter {
      */
     async commit() {
         // There are three scenarios, adding, deleting, updating
+        console.log('w')
+
+        if (this.referencedDocs.length == 0 && !this.deleteData) this.batch.set(db.collection(this.collection).doc(), this.addData);
 
         if (this.referencedDocs.length == 1) this.addData['uniquifier'] = this.referencedDocs[0];
 
         if (this.queryFilters.length > 0) {
+            console.log('found');
             let object = db.collection(this.collection);
 
             this.queryFilters.forEach(filter => {
@@ -164,6 +172,7 @@ class CachedEmitter {
             }
         } else {
             // Delete Data
+            console.log('deleting');
             for (let doc of this.referencedDocs) {
                 this.batch.delete(db.collection(this.collection).doc(doc));
             }
